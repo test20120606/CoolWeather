@@ -27,7 +27,7 @@ public class WelcomeAcivity extends Activity {
 			}
 		};
 		Handler handler = new Handler();
-		handler.postDelayed(run, 1 * 1000);
+		handler.postDelayed(run, 2 * 1000);
 	}
 
 }
