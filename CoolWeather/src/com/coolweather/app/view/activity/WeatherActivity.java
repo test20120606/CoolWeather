@@ -25,10 +25,6 @@ import com.coolweather.app.view.service.AutoUpdateService;
 
 
 
-
-
-
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
@@ -119,6 +115,7 @@ public class WeatherActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
+
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.weather);
 		
@@ -127,15 +124,7 @@ public class WeatherActivity extends Activity {
 		 */
 		mLocationClient = new LocationClient(this.getApplicationContext());
 		mLocationClient.registerLocationListener(new MyLocationListener());
-		//初始化各个控件
-//		weatherinfoLayout = (LinearLayout) findViewById(R.id.weather_info_layout);
-//		cityNameText = (TextView) findViewById(R.id.city_name);
-//		publishText = (TextView) findViewById(R.id.publish_text);
-//		weatherDespText = (TextView) findViewById(R.id.weather_desp);
-//		temp1Text = (TextView) findViewById(R.id.temp1);
-//		temp1Text.setText("hhhh");
-//		temp2Text = (TextView) findViewById(R.id.temp2);
-//		currentDateText = (TextView) findViewById(R.id.current_date);
+
 		//新界面初始化
 		weatherBg = (LinearLayout) findViewById(R.id.weather_bg);
 		titleBarLayout = (LinearLayout) findViewById(R.id.title_bar_layout);
@@ -182,43 +171,9 @@ public class WeatherActivity extends Activity {
 //			publishText.setText("同步失败。。。。");
 			//没有县级代号就直接呈现之前的天气信息
 			showWeather();
-		}
-		
-		/*
-		 * 初始化城市及刷新按钮，绑定监听器。
-		 */
-//		switchCity =(Button) findViewById(R.id.switch_city);
-//		refreshWeather = (Button) findViewById(R.id.refresh_weather);
-//		switchCity.setOnClickListener(this);
-//		refreshWeather.setOnClickListener(this);
-		
+		}		
 	}
-	//老程序的监听
-//	@Override
-//	public void onClick(View v) {
-//		switch(v.getId()){
-//		//返回主界面按钮
-//		case R.id.switch_city:
-//			Intent intent  = new Intent(this,ChooseAreaActivity.class);
-//			intent.putExtra("from_weather_activity", true);//标志
-//			startActivity(intent);
-//			finish();
-//			break;
-//		case R.id.refresh_weather:
-//		//	publishText.setText("同步中");
-//			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-//			String weatherCode = prefs.getString("weather_code", "");
-//			if(!TextUtils.isEmpty(weatherCode)){
-//				queryWeatherInfo(weatherCode);
-//			}
-//			break;
-//		default : break;
-//			
-//			
-//			
-//		}
-//		
-//	}
+
 	
 	/*
 	 * 根据城市名转换格式并瓶装地址，查询城市天气
